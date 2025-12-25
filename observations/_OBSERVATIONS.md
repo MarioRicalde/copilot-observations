@@ -101,3 +101,11 @@ The agent would continue into the next agent step, but it would avoid outputting
 
 This process, by itself, caused the model to not output the expected table. Instead, it would output a verbose message indicating the steps it was taking without producing the final output.
 
+
+### Case: Raptor Mini (Preview) improvements overview
+
+After performing equivalent chnages to both repositories the output seems to have stabilized providinmg consistent experineces with Raptor mini (Preview); albeit, not as consistently as desired.
+
+The model still struggles to produce a non-verbose response without adding further limiters to the prompt.
+
+For the time being I am going to label this 25.1.0 as concluded for testing and have the next versions focus on improving the accuracy of the output across all models.
