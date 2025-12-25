@@ -13,8 +13,8 @@ These two steps cause less-than-state-of-the-art models to omit the table style 
 
 The following repositories are referenced across all of the following cases:
 
-    - https://github.com/MarioRicalde/copilot-handoffs-simple-number-processor/releases/tag/v25.0.0
-    - https://github.com/MarioRicalde/copilot-handoffs-subagent-number-processor/releases/tag/v25.0.0
+- [copilot-handoffs-simple-number-processor v25.0.0](https://github.com/MarioRicalde/copilot-handoffs-simple-number-processor/tree/v25.0.0)
+- [copilot-handoffs-subagent-number-processor v25.0.0](https://github.com/MarioRicalde/copilot-handoffs-subagent-number-processor/tree/v25.0.0)
 
 ### Case: Handing off between agents with different tool access
 
@@ -77,9 +77,8 @@ It struggles to follow the chain and tends to abort before reaching the end, wit
 
 To create the best agent configuration possible, the following tasks were performed in an attempt to make the agent produce the expected output consistently on Raptor Mini (Preview), another "free" model offered by GitHub Copilot.
 
-    - https://github.com/MarioRicalde/copilot-handoffs-simple-number-processor/releases/tag/v25.1.0
-    - https://github.com/MarioRicalde/copilot-handoffs-subagent-number-processor/releases/tag/v25.1.0
-
+- [copilot-handoffs-simple-number-processor v25.1.0](https://github.com/MarioRicalde/copilot-handoffs-simple-number-processor/compare/v25.0.0...v25.1.0)
+- [copilot-handoffs-subagent-number-processor v25.1.0](https://github.com/MarioRicalde/copilot-handoffs-subagent-number-processor/compare/v25.0.0...v25.1.0)
 
 ### Case: Raptor Mini (Preview) necessary improvements to avoid premature termination
 
