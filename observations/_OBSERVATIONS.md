@@ -77,6 +77,10 @@ It struggles to follow the chain and tends to abort before reaching the end, wit
 
 To create the best agent configuration possible, the following tasks were performed in an attempt to make the agent produce the expected output consistently on Raptor Mini (Preview), another "free" model offered by GitHub Copilot.
 
+    - https://github.com/MarioRicalde/copilot-handoffs-simple-number-processor/releases/tag/v25.1.0
+    - https://github.com/MarioRicalde/copilot-handoffs-subagent-number-processor/releases/tag/v25.1.0
+
+
 ### Case: Raptor Mini (Preview) necessary improvements to avoid premature termination
 
 Using Raptor Mini (Preview):
