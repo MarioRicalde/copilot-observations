@@ -9,7 +9,13 @@ These two steps cause less-than-state-of-the-art models to omit the table style 
 - The table is generated in agent step #4.
 - In step #5, we decorate part of the string.
 
+<br><br><br><br>
+
 ## CHANGELOG
+
+Ordered from most recent to oldest.
+
+<br><br>
 
 ### copilot-handoffs-siumple-skills-number-processor - Observations
 ---
@@ -43,32 +49,7 @@ I have documented this behavior in a separate repository for this purpose:
 And opened issue [#285075](https://github.com/microsoft/vscode/issues/285075)
 
 <br><br>
-### 25.2.0 - Observations
----
-Now that we have a somewhat consistent experience with both styles, we need to focus on maxmimizing their differences in terms of verbosity vs accuracy.
 
-These cases only affect the following repositories:
-
-- [copilot-handoffs-simple-number-processor v25.2.0](https://github.com/MarioRicalde/copilot-handoffs-simple-number-processor/compare/v25.1.0...v25.2.0)
-
-#### Case: Proper Handoff vs Subagents - Verbosity and Accuracy Trade-off
----
-From what can be observed, it seems that both implementations are capable of giving the right results, especially with  state-of-the-art models.
-
-However, the proper handoff implementation tends to be more verbose, while the subagent approach is more concise. Or that's what the observations indicate so far.
-
-The next step is to focus on maximizing the accuracy of both implementations while keeping their verbosity levels as distinct as possible. This will help in understanding the trade-offs between the two approaches better.
-
-#### Case: Setting `prompt` as an empty string
----
-As an attempt to lower the verbosity of the handoff implementation, we remove the prompt by setting it to an empty string.
-
-Grok Code Fast 1 (0x) seems to handle this change well, producing less verbose output while maintaining accuracy.
-
-However, Raptor Mini (Preview) struggles with this change, leading to a significant drop in accuracy. It seems that this model relies heavily on the prompt context to guide its output. Especially on the "comma decoration" step.
-
-For the purpose of exploring this path. I'll focus on Grok Code Fast 1 (0x) for now, as it seems to handle the empty prompt scenario better.
-<br><br>
 ### 25.2.0 - Observations
 ---
 Now that we have a somewhat consistent experience with both styles, we need to focus on maxmimizing their differences in terms of verbosity vs accuracy.
@@ -96,6 +77,35 @@ However, Raptor Mini (Preview) struggles with this change, leading to a signific
 For the purpose of exploring this path. I'll focus on Grok Code Fast 1 (0x) for now, as it seems to handle the empty prompt scenario better.
 
 <br><br>
+
+### 25.2.0 - Observations
+---
+Now that we have a somewhat consistent experience with both styles, we need to focus on maxmimizing their differences in terms of verbosity vs accuracy.
+
+These cases only affect the following repositories:
+
+- [copilot-handoffs-simple-number-processor v25.2.0](https://github.com/MarioRicalde/copilot-handoffs-simple-number-processor/compare/v25.1.0...v25.2.0)
+
+#### Case: Proper Handoff vs Subagents - Verbosity and Accuracy Trade-off
+---
+From what can be observed, it seems that both implementations are capable of giving the right results, especially with  state-of-the-art models.
+
+However, the proper handoff implementation tends to be more verbose, while the subagent approach is more concise. Or that's what the observations indicate so far.
+
+The next step is to focus on maximizing the accuracy of both implementations while keeping their verbosity levels as distinct as possible. This will help in understanding the trade-offs between the two approaches better.
+
+#### Case: Setting `prompt` as an empty string
+---
+As an attempt to lower the verbosity of the handoff implementation, we remove the prompt by setting it to an empty string.
+
+Grok Code Fast 1 (0x) seems to handle this change well, producing less verbose output while maintaining accuracy.
+
+However, Raptor Mini (Preview) struggles with this change, leading to a significant drop in accuracy. It seems that this model relies heavily on the prompt context to guide its output. Especially on the "comma decoration" step.
+
+For the purpose of exploring this path. I'll focus on Grok Code Fast 1 (0x) for now, as it seems to handle the empty prompt scenario better.
+
+<br><br>
+
 ### 25.1.0 - Observations
 ---
 To create the best agent configuration possible, the following tasks were performed in an attempt to make the agent produce the expected output consistently on Raptor Mini (Preview), another "free" model offered by GitHub Copilot.
@@ -138,8 +148,8 @@ The model still struggles to produce a non-verbose response without adding furth
 
 For the time being I am going to label this 25.1.0 as concluded for testing and have the next versions focus on improving the accuracy of the output across all models.
 
-
 <br><br>
+
 ### 25.0.0 - Observations
 ---
 The following repositories are referenced across all of the following cases:
