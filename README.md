@@ -10,7 +10,6 @@ These two steps cause less-than-state-of-the-art models to omit the table style 
 - In step #5, we decorate part of the string.
 
 ## CHANGELOG
----
 
 ### copilot-handoffs-siumple-skills-number-processor - Observations
 ---
@@ -43,6 +42,7 @@ I have documented this behavior in a separate repository for this purpose:
 
 And opened issue [#285075](https://github.com/microsoft/vscode/issues/285075)
 
+<br><br>
 ### 25.2.0 - Observations
 ---
 Now that we have a somewhat consistent experience with both styles, we need to focus on maxmimizing their differences in terms of verbosity vs accuracy.
@@ -68,6 +68,7 @@ Grok Code Fast 1 (0x) seems to handle this change well, producing less verbose o
 However, Raptor Mini (Preview) struggles with this change, leading to a significant drop in accuracy. It seems that this model relies heavily on the prompt context to guide its output. Especially on the "comma decoration" step.
 
 For the purpose of exploring this path. I'll focus on Grok Code Fast 1 (0x) for now, as it seems to handle the empty prompt scenario better.
+<br><br>
 ### 25.2.0 - Observations
 ---
 Now that we have a somewhat consistent experience with both styles, we need to focus on maxmimizing their differences in terms of verbosity vs accuracy.
@@ -94,6 +95,7 @@ However, Raptor Mini (Preview) struggles with this change, leading to a signific
 
 For the purpose of exploring this path. I'll focus on Grok Code Fast 1 (0x) for now, as it seems to handle the empty prompt scenario better.
 
+<br><br>
 ### 25.1.0 - Observations
 ---
 To create the best agent configuration possible, the following tasks were performed in an attempt to make the agent produce the expected output consistently on Raptor Mini (Preview), another "free" model offered by GitHub Copilot.
@@ -137,6 +139,7 @@ The model still struggles to produce a non-verbose response without adding furth
 For the time being I am going to label this 25.1.0 as concluded for testing and have the next versions focus on improving the accuracy of the output across all models.
 
 
+<br><br>
 ### 25.0.0 - Observations
 ---
 The following repositories are referenced across all of the following cases:
