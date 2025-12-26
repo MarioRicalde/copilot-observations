@@ -15,7 +15,7 @@ These two steps cause less-than-state-of-the-art models to omit the table style 
 
 **Ordered from most recent to oldest.**
 
-<br>>
+<br>
 
 ### copilot-handoffs-siumple-skills-number-processor - Observations
 ---
