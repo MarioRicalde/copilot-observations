@@ -4,10 +4,16 @@ This document contains observations and notes related to the project ["0-awesome
 
 ## Intentional traps implemented for models to fall into
 
+### Extra Steps that confuse
+
 These two steps cause less-than-state-of-the-art models to omit the table style in the final output.
 
 - The table is generated in agent step #4.
 - In step #5, we decorate part of the string.
+
+### Bad Agent Names
+
+Uses first, sed, tri, forth, fif and verify as suffixes just to complicate things a bit.
 
 <br><br><br><br>
 
