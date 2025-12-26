@@ -11,6 +11,10 @@ These two steps cause less-than-state-of-the-art models to omit the table style 
 - The table is generated in agent step #4.
 - In step #5, we decorate part of the string.
 
+### Recursion
+
+On step five we ask the model to add one comma at a time. This causes models that are not very capable of handling recursion to fail at producing the expected output.
+
 ### Bad Agent Names
 
 Uses first, sed, tri, forth, fif and verify as suffixes just to complicate things a bit.
