@@ -119,3 +119,60 @@ After performing equivalent chnages to both repositories the output seems to hav
 The model still struggles to produce a non-verbose response without adding further limiters to the prompt.
 
 For the time being I am going to label this 25.1.0 as concluded for testing and have the next versions focus on improving the accuracy of the output across all models.
+
+## 25.2.0 - Observations
+
+Now that we have a somewhat consistent experience with both styles, we need to focus on maxmimizing their differences in terms of verbosity vs accuracy.
+
+These cases only affect the following repositories:
+
+- [copilot-handoffs-simple-number-processor v25.2.0](https://github.com/MarioRicalde/copilot-handoffs-simple-number-processor/compare/v25.1.0...v25.2.0)
+
+### Case: Proper Handoff vs Subagents - Verbosity and Accuracy Trade-off
+---
+From what can be observed, it seems that both implementations are capable of giving the right results, especially with  state-of-the-art models.
+
+However, the proper handoff implementation tends to be more verbose, while the subagent approach is more concise. Or that's what the observations indicate so far.
+
+The next step is to focus on maximizing the accuracy of both implementations while keeping their verbosity levels as distinct as possible. This will help in understanding the trade-offs between the two approaches better.
+
+### Case: Setting `prompt` as an empty string
+---
+As an attempt to lower the verbosity of the handoff implementation, we remove the prompt by setting it to an empty string.
+
+Grok Code Fast 1 (0x) seems to handle this change well, producing less verbose output while maintaining accuracy.
+
+However, Raptor Mini (Preview) struggles with this change, leading to a significant drop in accuracy. It seems that this model relies heavily on the prompt context to guide its output. Especially on the "comma decoration" step.
+
+For the purpose of exploring this path. I'll focus on Grok Code Fast 1 (0x) for now, as it seems to handle the empty prompt scenario better.
+
+## copilot-handoffs-siumple-skills-number-processor - Observations
+
+Now that we have a somewhat consistent experience with both styles, we need to focus on maxmimizing their differences in terms of verbosity vs accuracy.
+
+### Case: Simplification and adjusting <continue> methods
+---
+
+Removing as many of the in-content mentions of <continue> as possi0ble and replacing it with a more explicit "continue-always" keeps everything working well enough.
+
+Removing:
+
+> Do not stop working on this issue until there are no further subagents to run.
+
+Causes the cheaper models to exit prematurely.
+
+In an ideal world I should be able to extract that mention without affecting the prompt. To do so I enabled the Skills feature (experimental) and createde a new skill called: "handoff-continue-logic".
+
+The way how it's implemented by Copilot is that it includes it on its own discretion. So far, it seems to include it 50/50.
+
+Updating the `name` and `description` to `ALWAYS ON SKILL` made it work more often 90-100% of the time.
+
+At the time of writing this **(12/25/2025)**: Skills do not seem to be compatible with OpenAI models. They are siomply ignored. And when the first agent ends executing its part it stops there. 100% of the time.
+
+This makes Skills unusable for my purposes at the moment.
+
+I have documented this behavior in a separate repository for this purpose:
+
+[copilot-handoffs-siumple-skills-number-processor](https://github.com/MarioRicalde/copilot-handoffs-simple-skills-number-processor)
+
+And opened issue [#285075](https://github.com/microsoft/vscode/issues/285075)
